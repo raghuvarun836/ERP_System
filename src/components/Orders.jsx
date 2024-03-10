@@ -59,10 +59,13 @@ function Orders() {
             <p>Order ID: {selectedOrder.id}</p>
             <p>Customer Name: {selectedOrder.customerName}</p>
             <p>Order Date: {selectedOrder.orderDate}</p>
+            <p>Expected Delivery Date: {selectedOrder.expectedDeliveryDate}</p>
             <p>Status: {selectedOrder.status}</p>
           </div>
         )}
-        <button onClick={() => setViewModalOpen(false)}>Close</button>
+        <div className="form-buttons">
+        <button className='cancel' onClick={() => setViewModalOpen(false)}>Close</button>
+        </div>
       </Modal>
 
       {/* Edit Order Modal */}
@@ -78,6 +81,7 @@ function Orders() {
             <p>Order ID: {selectedOrder.id}</p>
             <p>Customer Name: {selectedOrder.customerName}</p>
             <p>Order Date: {selectedOrder.orderDate}</p>
+            <p>Expected Delivery Date: {selectedOrder.expectedDeliveryDate}</p>
             <label>Status:</label>
             <select
               value={selectedOrder.status}
@@ -92,7 +96,7 @@ function Orders() {
           </div>
         )}
         <div className="form-buttons">
-          <button onClick={handleCancelEdit}>Cancel</button>
+          <button className='cancel' onClick={handleCancelEdit}>Cancel</button>
         </div>
       </Modal>
 
@@ -102,6 +106,7 @@ function Orders() {
             <th>Order ID</th>
             <th>Customer Name</th>
             <th>Order Date</th>
+            <th>Expected Delivery Date</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -112,6 +117,7 @@ function Orders() {
               <td>{order.id}</td>
               <td>{order.customerName}</td>
               <td>{order.orderDate}</td>
+              <td>{order.expectedDeliveryDate}</td>
               <td>{order.status}</td>
               <td>
                 <button className="view-button" onClick={() => handleViewOrder(order.id)}>View</button>

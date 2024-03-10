@@ -40,6 +40,23 @@
 .modal .form-buttons {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
+}
+
+.form-buttons .add{
+  background-color: #64ca67;
+  border-radius: 5px;
+}
+.form-buttons .add:hover{
+  background-color: #4caf50;
+}
+
+.form-buttons .cancel{
+  background-color: #e74c3c;
+  border-radius: 5px;
+}
+.form-buttons .cancel:hover{
+  background-color: #c94132;
 }
 
 .action-buttons {

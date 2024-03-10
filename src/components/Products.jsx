@@ -90,8 +90,8 @@ function Products() {
           />
         </div>
         <div className="form-buttons">
-          <button onClick={handleAddProduct}>Add Product</button>
-          <button onClick={() => setAddModalOpen(false)}>Cancel</button>
+          <button className='add' onClick={handleAddProduct}>Add Product</button>
+          <button className='cancel' onClick={() => setAddModalOpen(false)}>Cancel</button>
         </div>
       </Modal>
 
@@ -156,8 +156,8 @@ function Products() {
           />
         </div>
         <div className="form-buttons">
-          <button onClick={handleEditProduct}>Save Changes</button>
-          <button onClick={handleCancelEdit}>Cancel</button>
+          <button className='add' onClick={handleEditProduct}>Save Changes</button>
+          <button className='cancel' onClick={handleCancelEdit}>Cancel</button>
         </div>
       </Modal>
 

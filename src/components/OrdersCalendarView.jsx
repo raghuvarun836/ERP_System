@@ -8,6 +8,7 @@ function OrdersCalendarView() {
   // Remove setOrders if not used
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedOrders, setSelectedOrders] = useState([]);
+  const [selectedDeliveries, setSelectedDeliveries] = useState([]);
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleDateChange = (date) => {
@@ -15,7 +16,13 @@ function OrdersCalendarView() {
     const ordersOnSelectedDate = initialOrders.filter(
       (order) => new Date(order.orderDate).toDateString() === date.toDateString()
     );
+
+    const deliveriesOnSelectedDate = initialOrders.filter(
+      (order) => new Date(order.expectedDeliveryDate).toDateString() === date.toDateString()
+    );
+
     setSelectedOrders(ordersOnSelectedDate);
+    setSelectedDeliveries(deliveriesOnSelectedDate);
     setModalOpen(true);
   };
 
@@ -42,7 +49,8 @@ function OrdersCalendarView() {
         contentLabel="Orders Calendar Modal"
         className="modal"
       >
-        <h3>Orders on {selectedDate.toDateString()}</h3>
+        <h2>{selectedDate.toDateString()}</h2>
+        <h3>Orders:</h3>
         <div>
           {selectedOrders.map((order) => (
             <div key={order.id}>
@@ -53,7 +61,23 @@ function OrdersCalendarView() {
             </div>
           ))}
         </div>
-        <button onClick={handleModalClose}>Close</button>
+
+        <div>
+          {/* Display deliveries */}
+          <h3>Deliveries:</h3>
+          {selectedDeliveries.map((delivery) => (
+            <div key={delivery.id}>
+              <p>Delivery ID: {delivery.id}</p>
+              <p>Customer Name: {delivery.customerName}</p>
+              <p>Status: {delivery.status}</p>
+              <hr />
+            </div>
+          ))}
+        </div>
+
+        <div className="form-buttons">
+          <button className='cancel' onClick={handleModalClose}>Close</button>
+        </div>
       </Modal>
     </div>
   );
