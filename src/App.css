@@ -5,13 +5,13 @@ body {
   background-color: #f8f8f8;
 }
 
-nav {
-  background-color: #333;
+.nav {
+  background-color: #222;
   padding: 25px;
   text-align: center;
 }
 
-nav ul {
+.nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
@@ -20,56 +20,65 @@ nav ul {
   gap: 5%;
 }
 
-nav li {
-  margin: 0;
+.nav li {
+  position: relative;
 }
 
-nav a {
+.nav li::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 80%;
+  height: 1.5px;
+  background-color: #fff;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+}
+
+.nav li:hover::after {
+  transform: translateX(-50%) scaleX(1);
+  transform-origin: bottom left;
+}
+.nav a {
   text-decoration: none;
   color: white;
   font-weight: bold;
   font-size: 16px;
   padding: 10px;
+  position: relative;
 }
 
-main {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.nav a:hover {
+  color: orange;
+}
+
+.nav a.active {
+  color: orange;
 }
 
 @media screen and (max-width: 600px) {
-  nav ul {
+  .nav ul {
     flex-direction: column;
     align-items: center;
     gap: 10px;
   }
 
-  nav li {
-    margin-bottom: 5px;
-  }
-
-  nav a {
+  .nav a {
     padding: 8px;
     font-size: 14px;
   }
 
-  main {
-    padding: 15px;
-  }
-
   table {
-    overflow-x: auto; /* Add horizontal scroll to tables */
+    overflow-x: auto; /* horizontal scroll to tables */
     display: block;
     white-space: nowrap;
   }
 
   th,
   td {
-    min-width: 100px; /* Set a minimum width for cells */
+    min-width: 100px;
     box-sizing: border-box;
   }
 }
