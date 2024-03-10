@@ -49,7 +49,6 @@ function Products() {
     <div className='container'>
       <h2>Products Management</h2>
 
-      {/* Add Product Modal */}
       <Modal
         isOpen={isAddModalOpen}
         onRequestClose={() => setAddModalOpen(false)}
@@ -95,7 +94,6 @@ function Products() {
         </div>
       </Modal>
 
-      {/* Edit Product Modal */}
       <Modal
         isOpen={isEditModalOpen}
         onRequestClose={() => setEditModalOpen(false)}

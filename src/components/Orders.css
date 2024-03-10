@@ -87,10 +87,3 @@
   .view-button:hover{
     background-color: #4caf50;
   }
-  
-  @media (max-width: 600px) {
-    .modal {
-      max-width: 90%;
-    }
-  }
-  

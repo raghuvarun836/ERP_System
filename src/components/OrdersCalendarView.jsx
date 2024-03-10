@@ -5,7 +5,6 @@ import initialOrders from './orderData';
 import './OrdersCalendarView.css';
 
 function OrdersCalendarView() {
-  // Remove setOrders if not used
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedOrders, setSelectedOrders] = useState([]);
   const [selectedDeliveries, setSelectedDeliveries] = useState([]);
@@ -34,7 +33,6 @@ function OrdersCalendarView() {
     <div className='container'>
       <h2>Orders Calendar View</h2>
 
-      {/* Calendar */}
       <div className="calendar-container">
         <Calendar
           onChange={handleDateChange}
@@ -42,7 +40,6 @@ function OrdersCalendarView() {
         />
       </div>
 
-      {/* Orders Modal */}
       <Modal
         isOpen={isModalOpen}
         onRequestClose={handleModalClose}
@@ -63,7 +60,6 @@ function OrdersCalendarView() {
         </div>
 
         <div>
-          {/* Display deliveries */}
           <h3>Deliveries:</h3>
           {selectedDeliveries.map((delivery) => (
             <div key={delivery.id}>

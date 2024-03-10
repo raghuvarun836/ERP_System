@@ -45,8 +45,7 @@ function Orders() {
   return (
     <div className='container'>
       <h2>Orders Management</h2>
-
-      {/* View Order Modal */}
+      
       <Modal
         isOpen={isViewModalOpen}
         onRequestClose={() => setViewModalOpen(false)}
