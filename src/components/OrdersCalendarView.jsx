@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import Modal from 'react-modal';
-import initialOrders from './orderData';
 import './OrdersCalendarView.css';
 
-function OrdersCalendarView() {
+function OrdersCalendarView({ ordersData }) {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedOrders, setSelectedOrders] = useState([]);
   const [selectedDeliveries, setSelectedDeliveries] = useState([]);
@@ -12,11 +11,14 @@ function OrdersCalendarView() {
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
-    const ordersOnSelectedDate = initialOrders.filter(
+
+    // Filter orders on selected date
+    const ordersOnSelectedDate = ordersData.filter(
       (order) => new Date(order.orderDate).toDateString() === date.toDateString()
     );
 
-    const deliveriesOnSelectedDate = initialOrders.filter(
+    // Filter deliveries on selected date
+    const deliveriesOnSelectedDate = ordersData.filter(
       (order) => new Date(order.expectedDeliveryDate).toDateString() === date.toDateString()
     );
 

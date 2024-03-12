@@ -1,13 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import initialOrders from './orderData';
-import initialProducts from './productData';
 import './Dashboard.css';
 
-function Dashboard() {
-  const totalProducts = initialProducts.length;
-  const totalOrders = initialOrders.length;
-
+function Dashboard({ productsData, ordersData }) {
+  const totalProducts = productsData.length;
+  const totalOrders = ordersData.length;
   return (
     <div className="dashboard-container">
       <h2>Dashboard</h2>

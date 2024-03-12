@@ -1,36 +1,33 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import initialOrders from './orderData';
 import './Orders.css';
 
 const statusOptions = ['Pending', 'Shipped', 'Delivered'];
 
-function Orders() {
-  const [orders, setOrders] = useState(initialOrders);
+function Orders({ ordersData, setOrdersData }) {
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [isViewModalOpen, setViewModalOpen] = useState(false);
   const [isEditModalOpen, setEditModalOpen] = useState(false);
 
   const handleDeleteOrder = (orderId) => {
-    setOrders((prevOrders) =>
-      prevOrders.filter((order) => order.id !== orderId)
-    );
+    // Update the ordersData state by filtering out the deleted order
+    setOrdersData((prevOrders) => prevOrders.filter((order) => order.id !== orderId));
   };
 
   const handleViewOrder = (orderId) => {
-    const order = orders.find((o) => o.id === orderId);
+    const order = ordersData.find((o) => o.id === orderId);
     setSelectedOrder(order);
     setViewModalOpen(true);
   };
 
   const handleEditOrder = (orderId) => {
-    const order = orders.find((o) => o.id === orderId);
+    const order = ordersData.find((o) => o.id === orderId);
     setSelectedOrder(order);
     setEditModalOpen(true);
   };
 
   const handleUpdateStatus = (newStatus) => {
-    setOrders((prevOrders) =>
+    setOrdersData((prevOrders) =>
       prevOrders.map((order) =>
         order.id === selectedOrder.id ? { ...order, status: newStatus } : order
       )
@@ -46,6 +43,7 @@ function Orders() {
     <div className='container'>
       <h2>Orders Management</h2>
       
+      {/* View Order Modal */}
       <Modal
         isOpen={isViewModalOpen}
         onRequestClose={() => setViewModalOpen(false)}
@@ -63,7 +61,7 @@ function Orders() {
           </div>
         )}
         <div className="form-buttons">
-        <button className='cancel' onClick={() => setViewModalOpen(false)}>Close</button>
+          <button className='cancel' onClick={() => setViewModalOpen(false)}>Close</button>
         </div>
       </Modal>
 
@@ -111,7 +109,7 @@ function Orders() {
           </tr>
         </thead>
         <tbody>
-          {orders.map((order) => (
+          {ordersData.map((order) => (
             <tr key={order.id}>
               <td>{order.id}</td>
               <td>{order.customerName}</td>

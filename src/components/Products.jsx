@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect , useState } from 'react';
 import Modal from 'react-modal';
-import initialProducts from './productData';
 import './Products.css';
 
-function Products() {
-  const [products, setProducts] = useState(initialProducts);
+const Products = ({ productsData, setProductsData }) => {
   const [newProduct, setNewProduct] = useState({
     name: '',
     category: '',
@@ -15,14 +13,19 @@ function Products() {
   const [isAddModalOpen, setAddModalOpen] = useState(false);
   const [isEditModalOpen, setEditModalOpen] = useState(false);
 
+  useEffect(() => {
+    // Set the app element for react-modal
+    Modal.setAppElement('#root');
+  }, []);
+
   const handleDeleteProduct = (productId) => {
-    setProducts((prevProducts) =>
-      prevProducts.filter((product) => product.id !== productId)
-    );
+    // Update the productsData state by filtering out the deleted product
+    setProductsData((prevProducts) => prevProducts.filter((product) => product.id !== productId));
   };
 
   const handleAddProduct = () => {
-    setProducts((prevProducts) => [
+    // Update the productsData state by adding the new product
+    setProductsData((prevProducts) => [
       ...prevProducts,
       { id: prevProducts.length + 1, ...newProduct },
     ]);
@@ -31,10 +34,9 @@ function Products() {
   };
 
   const handleEditProduct = () => {
-    setProducts((prevProducts) =>
-      prevProducts.map((product) =>
-        product.id === editingProduct.id ? editingProduct : product
-      )
+    // Update the productsData state by mapping over the products and updating the edited product
+    setProductsData((prevProducts) =>
+      prevProducts.map((product) => (product.id === editingProduct.id ? editingProduct : product))
     );
     setEditingProduct(null);
     setEditModalOpen(false);
@@ -174,7 +176,7 @@ function Products() {
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => (
+          {productsData.map((product) => (
             <tr key={product.id}>
               <td>{product.name}</td>
               <td>{product.category}</td>
