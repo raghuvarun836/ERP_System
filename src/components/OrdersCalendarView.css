@@ -3,12 +3,20 @@
   padding: 20px;
 }
 
-.calendar-container {
-  margin-top: 20px;
+.calendar-and-data-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.calendar-container,
+.todays-data {
+  flex-grow: 1;
+  margin: 0 20px; /* Center the content horizontally */
+  max-width: 400px;
+  width: 100%;
 }
 
 .react-calendar {
-  max-width: 400px;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -110,10 +118,16 @@
 }
 
 @media (max-width: 600px) {
-  .react-calendar {
-    max-width: 100%;
+  .calendar-and-data-container {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
   }
 
+  .calendar-container,
+  .todays-data {
+    margin: 0 auto; /* Center content horizontally */
+    max-width: 100%;
+  }
+  
   .calendar-container {
     margin-top: 10px;
   }
