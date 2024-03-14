@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, NavLink, Routes } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
-import Products from "./components/Products";
-import Orders from "./components/Orders";
-import OrdersCalendarView from "./components/OrdersCalendarView";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Products from "./components/Products/Products";
+import Orders from "./components/Orders/Orders";
+import OrdersCalendarView from "./components/CalendarView/OrdersCalendarView";
 import "./App.css";
 
 const App = () => {
@@ -11,6 +11,7 @@ const App = () => {
   const [ordersData, setOrdersData] = useState([]);
 
   useEffect(() => {
+    
     // Fetching products data from json
     fetch("/Data/productsData.json")
       .then((response) => response.json())
