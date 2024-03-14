@@ -26,7 +26,7 @@ Open http://localhost:3000 in your web browser to view the app.
     
 ## Demo
 
-Here is the link for demo video : 
+Here is the link for demo video : https://drive.google.com/file/d/1kGdYy_o24c71jb7j1HNt0UVORkvywn3v/view?usp=drive_link
 ## Live
 This project is deployed on Vercel hosting platform and here is the live link : https://erp-system-sigma.vercel.app/
 ## Application Design
