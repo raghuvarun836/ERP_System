@@ -1,70 +1,77 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ERP System Using ReactJs
 
-## Available Scripts
+This front-end application allows to view simplified ERP System with Dashboard, Products, Orders and Calendar View. It provides a user-friendly interface and also fully responsive.
 
-In the project directory, you can run:
 
-### `npm start`
+## Installation
+Make sure you have Node.js and npm installed already if not
+go to https://nodejs.org/en/download/ and install.
+After Installation go to the target folder where you want to run the React project.
+1. Clone the repository:
+```bash
+   git clone https://github.com/raghuvarun836/erp_system.git
+```
+2. Install prerequisite pakcages one after the other:
+```bash
+    npm install react-router-dom
+    npm install react-modal
+    npm install react-calendar
+```
+3. Run Application:
+```bash
+    npm start
+```
+Open http://localhost:3000 in your web browser to view the app.
+    
+## Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Here is the link for demo video : 
+## Live
+This project is deployed on Vercel hosting platform and here is the live link : https://erp-system-sigma.vercel.app/
+## Application Design
+Components :
+```
+1. Dashboard
+2. Products
+3. Orders
+4. Calendar View
+```
+## Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**React, HTML, CSS**
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- Responsive Design
+- CRUD Operations (Mock Data)
+- Fullscreen mode
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Screenshots
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Components
+![Screenshot (23)](https://github.com/raghuvarun836/erp_system/assets/122081809/45c75fbb-a13d-4c5f-b09a-b789f56474cc) 
+![Screenshot (26)](https://github.com/raghuvarun836/erp_system/assets/122081809/c43a95c3-08ac-4a76-8041-4e950b7dd8de)
+![Screenshot (32)](https://github.com/raghuvarun836/erp_system/assets/122081809/eba1eff1-6056-494f-bc50-875e4090130d)
+![Screenshot (36)](https://github.com/raghuvarun836/erp_system/assets/122081809/b3a527c0-faea-47b1-9b6d-f1ee813913b6)
 
-### `npm run eject`
+2. Adding and Modifying Products Data
+![Screenshot (27)](https://github.com/raghuvarun836/erp_system/assets/122081809/43972901-9acd-4ef1-9a38-b68fc88e30d2)
+![Screenshot (29)](https://github.com/raghuvarun836/erp_system/assets/122081809/b81673bf-9a13-4214-a0cb-c2ef7c95ab63)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+If any of the field is empty or the Price/Stocks are edited negative then the browser displays an alert before proceeding further.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. View and Edit Order Details
+![Screenshot (33)](https://github.com/raghuvarun836/erp_system/assets/122081809/70cf5c40-0892-42c4-8e97-b1efe1fea9f2)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Screenshot (39)](https://github.com/raghuvarun836/erp_system/assets/122081809/b594c935-e66d-4c6b-8b5f-4874678aee36)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. View Orders and Deliveries on Calendar
+![Screenshot (37)](https://github.com/raghuvarun836/erp_system/assets/122081809/82049505-213a-4201-bfad-8bb9ea188a80)
 
-## Learn More
+5. Updated Dashboard
+added 3 products and deleted 2 orders from the intial data.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Screenshot (41)](https://github.com/raghuvarun836/erp_system/assets/122081809/e5f61fa6-71df-4522-95ac-5373a24454dc)
